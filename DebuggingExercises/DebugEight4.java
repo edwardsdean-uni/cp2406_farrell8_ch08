@@ -1,12 +1,14 @@
 // Allows user to enter a series of words
 // and displays them in reverse order
 import javax.swing.*;
+import java.util.Arrays;
+
 public class DebugEight4
 {
    public static void main(String[] args)
    {
       int x = 0, y;
-      String array[] = new String[100];
+      String[] array = new String[100];
       String entry;
       final String STOP = "XXX";
       StringBuffer message = new
@@ -14,16 +16,14 @@ public class DebugEight4
      
       entry = JOptionPane.showInputDialog(null,
         "Enter any word\n" +
-        "Enter " + STOP " when you want to stop"); 
-      while(!(entry.equals(STOP))
-      {
-         array[STOP] = entry;
-         entry = JOptionPane.showinputDialog(null,
+        "Enter " + STOP + " when you want to stop");
+      while(!(entry.equals(STOP))){
+         Arrays.fill(array, entry);
+         entry = JOptionPane.showInputDialog(null,
             "Enter another word\n" +
             "Enter " + STOP + " when you want to stop"); 
       }
-      for(y = 0; y > 0; ++y);
-      {
+      for(y = array.length; y > 0; y--){
          message.append(array[y]);
          message.append("\n");
       }
